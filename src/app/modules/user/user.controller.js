@@ -3,6 +3,7 @@ const catchAsync = require("../../../shared/catchAsync");
 const httpStatus = require("http-status");
 const sendResponse = require("../../../shared/sendResponse");
 const config = require("../../../config");
+
 const createUser = catchAsync(
     async (req, res) => {
         const signupData = req.body;

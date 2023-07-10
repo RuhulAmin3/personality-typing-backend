@@ -1,4 +1,4 @@
-const { model } = require("mongoose");
+const { model, Schema } = require("mongoose");
 
 const CharacterSchema = new Schema({
     name: {
@@ -22,7 +22,7 @@ const CharacterSchema = new Schema({
         required: false
     },
     enneagramvariant: {
-        type: Number,
+        type: String,
         required: false
     }
 }, {
@@ -32,4 +32,6 @@ const CharacterSchema = new Schema({
     }
 });
 
-export const Character = model("character", CharacterSchema);
+const Character = model("character", CharacterSchema);
+
+module.exports = Character;
