@@ -1,13 +1,12 @@
-import { model } from "mongoose";
-
+const { model, Schema, Types } = require("mongoose");
 const CastSchema = new Schema({
     name: {
         type: String,
         required: true
     },
     characters: {
-        type: Array,
-        required: true
+        type: [Types.ObjectId],
+        required: true,
     }
 }, {
     timestamps: true,
@@ -16,4 +15,5 @@ const CastSchema = new Schema({
     }
 });
 
-export const Cast = model("cast", CastSchema);
+const Cast = model("cast", CastSchema);
+module.exports = Cast;

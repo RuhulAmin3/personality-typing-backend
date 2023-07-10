@@ -7,6 +7,7 @@ const userValidation = () => {
     return async (req, res, next) => {
         try {
             const token = req.headers.authorization;
+
             if (!token) {
                 throw new ApiError(httpStatus.UNAUTHORIZED, "you are unauthorized user")
             }
